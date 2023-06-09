@@ -1,16 +1,13 @@
 import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap/dist/js/bootstrap.js";
 import logo from "./img/logo.png";
 import "./navbar.css";
-
+import "../CartWidget/CartWidget";
+import CartWidget from "../CartWidget/CartWidget";
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="../../../public/index.html">
-          <img className="logo-clean" src={logo} alt="logo de clean pc" />
-          Clean PC
-        </a>
+      <div className="container-fluid navbar">
         <button
           className="navbar-toggler"
           type="a"
@@ -22,7 +19,11 @@ function NavBar() {
         >
           <span className="navbar-toggler-icon" />
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse nav__flex" id="navbarNav">
+          <a className="navbar-brand " href="../../../public/index.html">
+            <img className="logo-clean" src={logo} alt="logo de clean pc" />
+            <span className="nombre">Clean PC</span>
+          </a>
           <ul className="navbar-nav">
             <li className="nav-item">
               <a
@@ -44,6 +45,9 @@ function NavBar() {
               </a>
             </li>
           </ul>
+          <div className="cart">
+            <CartWidget />
+          </div>
         </div>
       </div>
     </nav>
