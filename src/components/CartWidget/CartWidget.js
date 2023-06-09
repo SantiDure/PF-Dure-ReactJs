@@ -1,4 +1,4 @@
-import carritoSvg from "./img/carrito.svg";
+import carritoSvg from "./assets/carrito.svg";
 import "./cartWidget.css";
 function CartWidget() {
   return (

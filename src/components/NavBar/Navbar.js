@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
-import logo from "./img/logo.png";
+import logo from "./assets/logo.png";
 import "./navbar.css";
 import "../CartWidget/CartWidget";
 import CartWidget from "../CartWidget/CartWidget";
