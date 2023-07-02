@@ -4,13 +4,15 @@ import logo from "./assets/logo.png";
 import "./navbar.css";
 import "../CartWidget/CartWidget";
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
+
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid navbar">
         <button
           className="navbar-toggler"
-          type="a"
+          type="Link"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
@@ -20,29 +22,25 @@ function NavBar() {
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse nav__flex" id="navbarNav">
-          <a className="navbar-brand " href="../../../public/index.html">
+          <Link to="/" className="navbar-brand ">
             <img className="logo-clean" src={logo} alt="logo de clean pc" />
             <span className="nombre">Clean PC</span>
-          </a>
+          </Link>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a
-                className="nav-link active"
-                aria-current="page"
-                href="../../../public/index.html"
-              >
+              <Link to="/" className="nav-link active">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="../../../public/index.html">
-                Todos los productos
-              </a>
+              <Link to="/productos" className="nav-link">
+                Productos
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="../../../public/index.html">
-                Liquidación
-              </a>
+              <Link to="/about" className="nav-link">
+                Sobre Nosotros
+              </Link>
             </li>
           </ul>
           <div className="cart">
