@@ -1,5 +1,7 @@
+import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
+
 function Home() {
-  return <div>Estas en Home</div>;
+  return <ItemListContainer greeting="Bienvenidos" />;
 }
 
 export default Home;
