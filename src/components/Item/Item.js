@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import stock from "../../data";
 import ItemCount from "../ItemCount/ItemCount";
 import foto from "../../assets/no-disponible.jpg";
+import "./Item.css";
 function Item() {
   const { itemid } = useParams();
   const item = stock.find((prod) => {
@@ -9,14 +10,17 @@ function Item() {
   });
   return (
     <>
-      <article key={item.id}>
-        <h2>{item.nombre}</h2>
-        <div>{item.marca}</div>
-        <img src={foto} alt={item.nombre}></img>
-        <ItemCount cantidad={item.cantidad} />
-        <div>{item.precio}</div>
-        <Link to={"/productos"}>Volver</Link>
-      </article>
+      <div className="item__layout">
+        <article key={item.id} className="item__container card">
+          <h2>{item.nombre}</h2>
+          <img src={foto} alt={item.nombre}></img>
+          <ItemCount cantidad={item.cantidad} />
+          <div>${item.precio}</div>
+          <Link to={"/productos"}>
+            <button className=" btn btn-primary">Volver</button>
+          </Link>
+        </article>
+      </div>
     </>
   );
 }

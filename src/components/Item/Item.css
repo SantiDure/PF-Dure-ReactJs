@@ -1,4 +1,12 @@
-.carta__item {
-  width: 100vh;
+.item__layout {
+  display: flex;
+  justify-content: center;
   margin: 2rem;
+}
+
+.item__container {
+  width: 70%;
+  padding: 2rem;
+  text-align: center;
+  flex-wrap: nowrap;
 }

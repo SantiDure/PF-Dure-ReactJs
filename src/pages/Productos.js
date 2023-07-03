@@ -13,7 +13,7 @@ function Productos() {
             <h5 className="card-title">{prod.nombre}</h5>
             <p className="card-text">${prod.precio}</p>
             <Link to={`${prod.id}`} className="btn btn-primary">
-              Más info
+              Ver detalles
             </Link>
           </div>
         </div>
