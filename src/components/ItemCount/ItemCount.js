@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./ItemCount.css";
 
 function ItemCount({ cantidad }) {
   const [cant, setCant] = useState(cantidad);
@@ -14,15 +15,7 @@ function ItemCount({ cantidad }) {
   }
 
   return (
-    <div>
-      <button
-        onClick={handleClickSumar}
-        type="button"
-        className="btn btn-primary"
-      >
-        +
-      </button>
-      <p>{cant}</p>
+    <div className="count__container">
       <button
         onClick={handleClickRestar}
         type="button"
@@ -30,8 +23,15 @@ function ItemCount({ cantidad }) {
       >
         -
       </button>
+      <p>{cant}</p>
+      <button
+        onClick={handleClickSumar}
+        type="button"
+        className="btn btn-primary"
+      >
+        +
+      </button>
     </div>
   );
 }
-
 export default ItemCount;

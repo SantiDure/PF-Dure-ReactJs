@@ -4,7 +4,7 @@ const stock = [
     nombre: "Adidas Response 3.0",
     precio: 47999,
     marca: "Adidas",
-    img: "./assets/adidas/response-3.0.webp",
+    img: "../adidas/response-3.0.webp",
     cantidad: 1,
   },
   {
@@ -12,7 +12,7 @@ const stock = [
     nombre: "Adidas Questar",
     precio: 39999,
     marca: "Adidas",
-    img: "./assets/adidas/questar.webp",
+    img: "../adidas/questar.webp",
     cantidad: 1,
   },
   {
@@ -20,7 +20,7 @@ const stock = [
     nombre: "Adidas Nebzed Super Boost",
     precio: 36999,
     marca: "Adidas",
-    img: "./assets/adidas/nebzed-super-boost.webp",
+    img: "../adidas/nebzed-super-boost.webp",
     cantidad: 1,
   },
   {
@@ -28,7 +28,7 @@ const stock = [
     nombre: "Adidas Grand Court",
     precio: 25999,
     marca: "Adidas",
-    img: "./assets/adidas/grand-court-6393-mark.webp",
+    img: "../adidas/grand-court-6393-mark.webp",
     cantidad: 1,
   },
   {
@@ -36,7 +36,7 @@ const stock = [
     nombre: "Adidas Duramo Protect",
     precio: 41999,
     marca: "Adidas",
-    img: "./assets/adidas/duramo-protect-3985-dash.jpg",
+    img: "../adidas/duramo-protect-3985-dash.jpg",
     cantidad: 1,
   },
   {
@@ -44,7 +44,7 @@ const stock = [
     nombre: "Adidas Breaknet",
     precio: 25999,
     marca: "Adidas",
-    img: "./assets/adidas/breaknet.webp",
+    img: "../adidas/breaknet.webp",
     cantidad: 1,
   },
 ];

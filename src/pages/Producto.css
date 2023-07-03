@@ -1,0 +1,9 @@
+.carta__producto {
+  width: 18rem;
+  margin: 2rem;
+}
+
+.productos__container {
+  display: flex;
+  flex-wrap: wrap;
+}

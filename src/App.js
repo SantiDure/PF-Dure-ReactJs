@@ -1,4 +1,3 @@
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
@@ -13,13 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route
-              path="/category/:id"
-              element={
-                <ItemListContainer greeting="¡Bienvenido! Estas son las ofertas que tenemos para ti por esta semana" />
-              }
-            />
+            <Route index element={<Home greeting="Bienvenidos" />} />
 
             <Route path="productos" element={<Productos />} />
 
