@@ -13,6 +13,7 @@ function Item() {
         <article key={item.id} className="item__container card">
           <h2>{item.nombre}</h2>
           <img src={item.img} alt={item.nombre}></img>
+          <p>{item.descripcion}</p>
           <ItemCount cantidad={item.cantidad} />
           <div>${item.precio}</div>
           <Link to={"/productos"}>

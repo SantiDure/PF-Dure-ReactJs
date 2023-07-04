@@ -18,8 +18,8 @@ function Categorias() {
             <img src={item.img} alt={item.nombre}></img>
             <ItemCount cantidad={item.cantidad} />
             <div>${item.precio}</div>
-            <Link to={"/"}>
-              <button className=" btn btn-primary">Volver</button>
+            <Link to={`/productos/${item.id}`}>
+              <button className=" btn btn-primary">Ver detalles</button>
             </Link>
           </article>
         </div>
