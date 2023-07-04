@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary nav">
       <div className="container-fluid navbar">
         <button
           className="navbar-toggler"
@@ -39,13 +39,14 @@ function NavBar() {
             </li>
 
             <li className="nav-item dropdown">
-              <button
+              <span
                 className="nav-link dropdown-toggle"
+                type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Categorias
-              </button>
+              </span>
               <ul className="dropdown-menu">
                 <li>
                   <Link to={"fuentes"} className="dropdown-item">
