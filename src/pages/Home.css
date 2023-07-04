@@ -1,6 +1,14 @@
+.carta__home {
+  width: 20rem;
+  margin: 2rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
 .home__container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .home__title {

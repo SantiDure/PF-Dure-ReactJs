@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import stock from "../data";
 import "./Home.css";
-import "./Producto.css";
 function Home({ greeting }) {
   function tomarDosElementosAlAzar(array) {
     const elementosAlAzar = [];
@@ -26,7 +25,7 @@ function Home({ greeting }) {
       <div className="home__container">
         {elementosInicio.map((item) => {
           return (
-            <div key={item.id} className="card carta__producto">
+            <div key={item.id} className="card carta__home">
               <div>
                 <img
                   src={item.img}

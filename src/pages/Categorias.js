@@ -28,5 +28,4 @@ function Categorias() {
   });
   return <div>{items}</div>;
 }
-
 export default Categorias;
