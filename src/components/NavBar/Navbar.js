@@ -49,12 +49,15 @@ function NavBar() {
               </span>
               <ul className="dropdown-menu">
                 <li>
-                  <Link to={"fuentes"} className="dropdown-item">
+                  <Link to={"categorias/fuentes"} className="dropdown-item">
                     Fuentes
                   </Link>
                 </li>
                 <li>
-                  <Link to={"almacenamiento"} className="dropdown-item">
+                  <Link
+                    to={"categorias/almacenamiento"}
+                    className="dropdown-item"
+                  >
                     Almacenamiento
                   </Link>
                 </li>
