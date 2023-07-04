@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import stock from "../data";
-import ItemCount from "../components/ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 
 function Categorias() {
@@ -16,7 +15,7 @@ function Categorias() {
           <article className="item__container card">
             <h2>{item.nombre}</h2>
             <img src={item.img} alt={item.nombre}></img>
-            <ItemCount cantidad={item.cantidad} />
+
             <div>${item.precio}</div>
             <Link to={`/productos/${item.id}`}>
               <button className=" btn btn-primary">Ver detalles</button>
