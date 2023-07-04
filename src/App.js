@@ -5,6 +5,7 @@ import Productos from "./pages/Productos";
 import About from "./pages/About";
 import Error from "./pages/Error";
 import Item from "./components/Item/Item";
+import Categorias from "./pages/Categorias";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="productos/:itemid" element={<Item />} />
             <Route path="about" element={<About />} />
 
+            <Route path="/:categoria" element={<Categorias />} />
             <Route path="*" element={<Error />} />
           </Route>
         </Routes>

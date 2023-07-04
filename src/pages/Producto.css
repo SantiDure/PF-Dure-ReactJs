@@ -1,6 +1,8 @@
 .carta__producto {
   width: 30%;
   margin: 2rem;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .productos__container {

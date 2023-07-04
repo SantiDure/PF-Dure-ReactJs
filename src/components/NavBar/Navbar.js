@@ -37,6 +37,29 @@ function NavBar() {
                 Productos
               </Link>
             </li>
+
+            <li className="nav-item dropdown">
+              <button
+                className="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categorias
+              </button>
+              <ul className="dropdown-menu">
+                <li>
+                  <Link to={"fuentes"} className="dropdown-item">
+                    Fuentes
+                  </Link>
+                </li>
+                <li>
+                  <Link to={"almacenamiento"} className="dropdown-item">
+                    Almacenamiento
+                  </Link>
+                </li>
+              </ul>
+            </li>
+
             <li className="nav-item">
               <Link to="/about" className="nav-link">
                 Sobre Nosotros

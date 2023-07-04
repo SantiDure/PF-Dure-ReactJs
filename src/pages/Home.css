@@ -1,0 +1,9 @@
+.home__container {
+  display: flex;
+  justify-content: center;
+}
+
+.home__title {
+  margin: 1rem;
+  text-align: center;
+}
