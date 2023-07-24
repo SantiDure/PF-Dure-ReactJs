@@ -1,11 +1,11 @@
-.card__item {
-  width: 50rem;
+.catg__container {
+  width: 20rem;
   margin: 2rem;
   justify-content: center;
   padding: 2rem;
 }
 
-.item__layout {
+.catg__layout {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
