@@ -1,10 +1,36 @@
 import { Link, useParams } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
-import stock from "../../data";
 import "./Item.css";
+import { useState, useEffect } from "react";
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../../config/firebase";
 function Item() {
   const { itemid } = useParams();
 
+  const [loading, setLoading] = useState(true);
+  const [stock, setStock] = useState([]);
+  const itemCollectionRef = collection(db, "stock");
+  useEffect(() => {
+    getDocs(itemCollectionRef)
+      .then(async (response) => {
+        const filteredData = response.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        setStock(filteredData);
+        setLoading(false);
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  if (loading) {
+    return <p>Cargando...</p>;
+  }
+
+  /////////////
   const item = stock.find((prod) => {
     return prod.id === itemid;
   });
@@ -17,10 +43,8 @@ function Item() {
           <p>{item.descripcion}</p>
           <ItemCount cantidad={item.cantidad} />
           <div>${item.precio}</div>
-          <Link to={"/productos"}>
-            <button className=" btn btn-primary">
-              Ver todos los productos
-            </button>
+          <Link to={"/"}>
+            <button className=" btn btn-primary">Volver al inicio</button>
           </Link>
           <Link to={"/cart"}>
             <button className=" btn btn-primary">Agregar al carrito</button>

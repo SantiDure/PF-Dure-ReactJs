@@ -1,29 +1,38 @@
 import { Link } from "react-router-dom";
-import stock from "../data";
 import "./Home.css";
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../config/firebase";
+import { useEffect, useState } from "react";
 function Home({ greeting }) {
-  function tomarDosElementosAlAzar(array) {
-    const elementosAlAzar = [];
+  // CONSUMO DE BD
+  const [loading, setLoading] = useState(true);
+  const [stock, setStock] = useState([]);
+  const itemCollectionRef = collection(db, "stock");
+  useEffect(() => {
+    getDocs(itemCollectionRef)
+      .then(async (response) => {
+        const filteredData = response.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        setStock(filteredData);
+        setLoading(false);
+      })
 
-    while (elementosAlAzar.length < 3) {
-      const indiceAleatorio = Math.floor(Math.random() * array.length);
-      const elemento = array[indiceAleatorio];
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-      if (!elementosAlAzar.includes(elemento)) {
-        elementosAlAzar.push(elemento);
-      }
-    }
-
-    return elementosAlAzar;
+  if (loading) {
+    return <p>Cargando...</p>;
   }
-
-  const elementosInicio = tomarDosElementosAlAzar(stock);
 
   return (
     <>
       <h1 className="home__title">{greeting}</h1>
       <div className="home__container">
-        {elementosInicio.map((item) => {
+        {stock.map((item) => {
           return (
             <div key={item.id} className="card carta__home">
               <div>
