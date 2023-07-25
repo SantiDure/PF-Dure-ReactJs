@@ -36,8 +36,8 @@ function Categorias() {
 
   const items = itemsFiltrados.map((item) => {
     return (
-      <div key={item.id} className="item__layout">
-        <article key={item.id} className="item__container card">
+      <div key={item.id}>
+        <article key={item.id} className=" catg__container card">
           <h2>{item.nombre}</h2>
           <img src={item.img} alt={item.nombre}></img>
 
@@ -49,6 +49,6 @@ function Categorias() {
       </div>
     );
   });
-  return <div>{items}</div>;
+  return <div className="catg__layout">{items}</div>;
 }
 export default Categorias;

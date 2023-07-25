@@ -4,7 +4,6 @@ import { getDocs, collection } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { useEffect, useState } from "react";
 function Home({ greeting }) {
-  // CONSUMO DE BD
   const [loading, setLoading] = useState(true);
   const [stock, setStock] = useState([]);
   const itemCollectionRef = collection(db, "stock");
@@ -28,11 +27,28 @@ function Home({ greeting }) {
     return <p>Cargando...</p>;
   }
 
+  function tresRandom(array) {
+    const elementosAlAzar = [];
+
+    while (elementosAlAzar.length < 3) {
+      const indiceAleatorio = Math.floor(Math.random() * array.length);
+      const elemento = array[indiceAleatorio];
+
+      if (!elementosAlAzar.includes(elemento)) {
+        elementosAlAzar.push(elemento);
+      }
+    }
+
+    return elementosAlAzar;
+  }
+
+  const elementosInicio = tresRandom(stock);
+
   return (
     <>
       <h1 className="home__title">{greeting}</h1>
       <div className="home__container">
-        {stock.map((item) => {
+        {elementosInicio.map((item) => {
           return (
             <div key={item.id} className="card carta__home">
               <div>
