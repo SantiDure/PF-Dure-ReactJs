@@ -32,7 +32,11 @@ function NavBar() {
                 Home
               </Link>
             </li>
-
+            <li className="nav-item">
+              <Link to="/productos" className="nav-link">
+                Todos los productos
+              </Link>
+            </li>
             <li className="nav-item dropdown">
               <span
                 className="nav-link dropdown-toggle"

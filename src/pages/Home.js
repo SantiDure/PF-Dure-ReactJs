@@ -3,6 +3,7 @@ import "./Home.css";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { useEffect, useState } from "react";
+
 function Home({ greeting }) {
   const [loading, setLoading] = useState(true);
   const [stock, setStock] = useState([]);
