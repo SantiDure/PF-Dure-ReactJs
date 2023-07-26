@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ItemCount.css";
 
-function ItemCount({ cantidad }) {
+function ItemCount({ cantidad, onAdd }) {
   const [cant, setCant] = useState(cantidad);
 
   function handleClickSumar() {
@@ -15,23 +15,30 @@ function ItemCount({ cantidad }) {
   }
 
   return (
-    <div className="count__container">
-      <button
-        onClick={handleClickRestar}
-        type="button"
-        className="btn btn-primary"
-      >
-        -
-      </button>
-      <p>{cant}</p>
-      <button
-        onClick={handleClickSumar}
-        type="button"
-        className="btn btn-primary"
-      >
-        +
-      </button>
-    </div>
+    <>
+      <div className="count__container">
+        <button
+          onClick={handleClickRestar}
+          type="button"
+          className="btn btn-primary"
+        >
+          -
+        </button>
+        <p>{cant}</p>
+        <button
+          onClick={handleClickSumar}
+          type="button"
+          className="btn btn-primary"
+        >
+          +
+        </button>
+      </div>
+      <div>
+        <button className=" btn btn-primary" onClick={() => onAdd(cant)}>
+          Agregar al carrito
+        </button>
+      </div>
+    </>
   );
 }
 export default ItemCount;

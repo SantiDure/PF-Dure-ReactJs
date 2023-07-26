@@ -10,12 +10,13 @@ function Item() {
   const { itemid } = useParams();
   const [goToCart, setGoToCart] = useState(false);
   const { addProduct } = useCartContext();
-
+  const [cant, setCant] = useState(1);
   const [loading, setLoading] = useState(true);
   const [stock, setStock] = useState([]);
   const itemCollectionRef = collection(db, "stock");
 
-  function onAdd(cantidad) {
+  function handleOnAdd(cantidad) {
+    setCant(cantidad);
     setGoToCart(true);
     addProduct(item, cantidad);
   }
@@ -51,7 +52,7 @@ function Item() {
           <h2>{item.nombre}</h2>
           <img src={item.img} alt={item.nombre}></img>
           <p>{item.descripcion}</p>
-          <ItemCount cantidad={item.cantidad} />
+
           <div>${item.precio}</div>
           <Link to={"/"}>
             <button className=" btn btn-primary">Volver al inicio</button>
@@ -61,12 +62,7 @@ function Item() {
               <button className=" btn btn-primary">Terminar Compra</button>
             </Link>
           ) : (
-            <button
-              className=" btn btn-primary"
-              onClick={() => onAdd(item.cantidad)}
-            >
-              Agregar al carrito
-            </button>
+            <ItemCount cantidad={cant} onAdd={handleOnAdd} />
           )}
         </article>
       </div>

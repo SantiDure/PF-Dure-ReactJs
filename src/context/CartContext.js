@@ -1,13 +1,21 @@
-import { useCallback } from "react";
+import { useContext } from "react";
 import { createContext, useState } from "react";
 
 export const CartContext = createContext(" ");
 
-export const useCartContext = () => useCallback(CartContext);
+export const useCartContext = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   console.log(cart);
+
+  function totalPrice() {
+    return cart.reduce((acum, prod) => acum + prod.precio * prod.cantidad, 0);
+  }
+
+  function totalProducts() {
+    return cart.reduce((acum, prod) => acum + prod.cantidad, 0);
+  }
   function clearCart() {
     setCart([]);
   }
@@ -27,7 +35,7 @@ export const CartProvider = ({ children }) => {
       newCart = [...cart];
     } else {
       product = { ...item, cantidad: cantidad };
-      newCart = { ...cart, product };
+      newCart = [...cart, product];
     }
     setCart(newCart);
   }
@@ -39,6 +47,8 @@ export const CartProvider = ({ children }) => {
         isInCart,
         removeProduct,
         addProduct,
+        totalPrice,
+        totalProducts,
       }}
     >
       {children}
