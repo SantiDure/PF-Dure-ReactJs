@@ -4,22 +4,21 @@ import "./Item.css";
 import { useState, useEffect } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../config/firebase";
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import { useCartContext } from "../../context/CartContext";
 
 function Item() {
   const { itemid } = useParams();
   const [goToCart, setGoToCart] = useState(false);
-  const { addProduct } = useContext(CartContext);
+  const { addProduct } = useCartContext();
 
   const [loading, setLoading] = useState(true);
   const [stock, setStock] = useState([]);
   const itemCollectionRef = collection(db, "stock");
 
-  const onAdd = (cantidad) => {
+  function onAdd(cantidad) {
     setGoToCart(true);
     addProduct(item, cantidad);
-  };
+  }
 
   useEffect(() => {
     getDocs(itemCollectionRef)
@@ -62,14 +61,12 @@ function Item() {
               <button className=" btn btn-primary">Terminar Compra</button>
             </Link>
           ) : (
-            <Link to={"/cart"}>
-              <button
-                className=" btn btn-primary"
-                onClick={onAdd(item.cantidad)}
-              >
-                Agregar al carrito
-              </button>
-            </Link>
+            <button
+              className=" btn btn-primary"
+              onClick={() => onAdd(item.cantidad)}
+            >
+              Agregar al carrito
+            </button>
           )}
         </article>
       </div>
