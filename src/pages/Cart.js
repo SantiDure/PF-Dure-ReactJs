@@ -3,8 +3,12 @@ import ItemCart from "../components/ItemCart/ItemCart";
 import { useCartContext } from "../context/CartContext";
 import { db } from "../config/firebase";
 import { addDoc, collection } from "firebase/firestore";
+import UserForm from "../components/UserForm/UserForm";
+import "./Cart.css";
+import { Link } from "react-router-dom";
+import img from "./assets/sad_119546.webp";
 function Cart() {
-  const { cart, totalPrice } = useCartContext();
+  const { cart, totalPrice, clearCart } = useCartContext();
 
   const ordenDeCompra = {
     datos: {
@@ -25,16 +29,26 @@ function Cart() {
         icon: "success",
       })
     );
+    clearCart();
   };
 
   if (cart.length === 0) {
     return (
       <>
-        <div>CARRITO VACIO</div>
-        <div>
-          {cart.map((prod) => (
-            <div>{prod.nombre}</div>
-          ))}
+        <div className="empty__cart">
+          <h2>No hay productos actualmente en su carrito en su carrito</h2>
+          <div>
+            <img src={img}></img>
+          </div>
+          <Link to={"/productos"}>
+            {" "}
+            <button className="btn btn-primary">Agregar productos</button>{" "}
+          </Link>
+          <div>
+            {cart.map((prod) => (
+              <div>{prod.nombre}</div>
+            ))}
+          </div>
         </div>
       </>
     );
@@ -48,12 +62,20 @@ function Cart() {
 
   return (
     <>
-      <div>
+      <h3>Completa tus datos para realizar el pedido</h3>
+      <div className="cart__container">
+        <div className="cart__layout">
+          <UserForm />
+
+          <div className="cart__card">{cards}</div>
+        </div>
         <button className="btn btn-success" onClick={handleEmitirCompra}>
           Emitir compra
         </button>
+        <button className="btn btn-danger" onClick={() => clearCart()}>
+          Vaciar carrito
+        </button>
       </div>
-      <div>{cards}</div>
     </>
   );
 }

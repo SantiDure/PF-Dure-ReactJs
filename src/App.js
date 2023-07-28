@@ -8,6 +8,7 @@ import Categorias from "./pages/Categorias";
 import Cart from "./pages/Cart";
 import { CartProvider } from "./context/CartContext";
 import Productos from "./pages/Productos";
+import UserForm from "./components/UserForm/UserForm";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="productos" element={<Productos />} />
               <Route path="categorias/:categoria" element={<Categorias />} />
               <Route path="*" element={<Error />} />
+              <Route path="form-data" element={<UserForm />} />
             </Route>
           </Routes>
         </CartProvider>
