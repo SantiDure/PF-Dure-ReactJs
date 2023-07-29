@@ -52,7 +52,7 @@ function Home({ greeting }) {
         {elementosInicio.map((item) => {
           return (
             <div key={item.id} className="card carta__home">
-              <div>
+              <div className="cart__align">
                 <img
                   src={item.img}
                   className="card-img-top"

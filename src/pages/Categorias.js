@@ -38,13 +38,15 @@ function Categorias() {
     return (
       <div key={item.id}>
         <article key={item.id} className=" catg__container card">
-          <h2>{item.nombre}</h2>
-          <img src={item.img} alt={item.nombre}></img>
+          <div className="catg__align">
+            <h2>{item.nombre}</h2>
+            <img src={item.img} alt={item.nombre}></img>
 
-          <div>${item.precio}</div>
-          <Link to={`/productos/${item.id}`}>
-            <button className=" btn btn-primary">Ver detalles</button>
-          </Link>
+            <div>${item.precio}</div>
+            <Link to={`/productos/${item.id}`}>
+              <button className=" btn btn-primary">Ver detalles</button>
+            </Link>
+          </div>
         </article>
       </div>
     );

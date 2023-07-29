@@ -81,13 +81,13 @@ function Cart() {
       <div className="cart__container">
         <div className="cart__layout">
           <form>
-            <div class="mb-3">
-              <label for="nombre" class="form-label">
+            <div className="mb-3">
+              <label for="nombre" className="form-label">
                 Nombre
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="nombre"
                 aria-describedby="nombre"
                 onChange={(e) => {
@@ -96,13 +96,13 @@ function Cart() {
                 }}
               />
             </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">
+            <div className="mb-3">
+              <label for="email" className="form-label">
                 Email
               </label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="email"
                 aria-describedby="email"
                 onChange={(e) => {
@@ -111,13 +111,13 @@ function Cart() {
                 }}
               />
             </div>
-            <div class="mb-3">
-              <label for="telefono" class="form-label">
+            <div className="mb-3">
+              <label for="telefono" className="form-label">
                 Teléfono
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="telefono"
                 onChange={(e) => {
                   e.preventDefault();
@@ -125,13 +125,13 @@ function Cart() {
                 }}
               />
             </div>
-            <div class="mb-3">
-              <label for="cp" class="form-label">
+            <div className="mb-3">
+              <label for="cp" className="form-label">
                 Codigo postal
               </label>
               <input
                 type="number"
-                class="form-control"
+                className="form-control"
                 id="cp"
                 onChange={(e) => {
                   e.preventDefault();

@@ -1,4 +1,7 @@
 .carta__home {
+  display: flex;
+
+  align-items: center;
   width: 20rem;
   margin: 2rem;
   justify-content: center;
@@ -7,6 +10,7 @@
 
 .home__container {
   display: flex;
+
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -14,4 +18,10 @@
 .home__title {
   margin: 1rem;
   text-align: center;
+}
+
+.cart__align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

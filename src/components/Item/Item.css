@@ -1,8 +1,9 @@
 .card__item {
-  width: 40rem;
+  width: 30rem;
   margin: 2rem;
   justify-content: center;
   padding: 2rem;
+  align-items: center;
 }
 
 .item__layout {
@@ -14,4 +15,13 @@
 .btn__volver {
   display: flex;
   justify-content: center;
+}
+
+.btn__terminar {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  max-width: 22rem;
 }

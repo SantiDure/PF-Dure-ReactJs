@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./ItemCount.css";
+import Swal from "sweetalert2";
 
 function ItemCount({ cantidad, onAdd }) {
   const [cant, setCant] = useState(cantidad);
@@ -33,7 +34,17 @@ function ItemCount({ cantidad, onAdd }) {
           +
         </button>
         <div>
-          <button className=" btn btn-primary" onClick={() => onAdd(cant)}>
+          <button
+            className=" btn btn-primary"
+            onClick={() => {
+              onAdd(cant);
+              Swal.fire({
+                title: "Producto agregado al carrito",
+                icon: "success",
+                timer: 3000,
+              });
+            }}
+          >
             Agregar al carrito
           </button>
         </div>

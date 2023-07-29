@@ -56,9 +56,11 @@ function Item() {
           <div>Precio: ${item.precio}</div>
 
           {goToCart ? (
-            <Link to={"/cart"}>
-              <button className=" btn btn-primary">Terminar Compra</button>
-            </Link>
+            <div className="btn__terminar">
+              <Link to={"/cart"}>
+                <button className=" btn btn-primary">Terminar Compra</button>
+              </Link>
+            </div>
           ) : (
             <ItemCount cantidad={cant} onAdd={handleOnAdd} />
           )}

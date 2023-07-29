@@ -45,7 +45,7 @@ function Footer() {
             </ul>
           </div>
         </footer>
-        <section id="copyright__container">
+        <section>
           <p className="copyright__p">© Copyright | Santiago Duré</p>
         </section>
       </div>

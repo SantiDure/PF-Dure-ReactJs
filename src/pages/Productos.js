@@ -31,7 +31,7 @@ function Productos() {
   const render = stock.map((prod) => {
     return (
       <div key={prod.id} className="card carta__producto">
-        <div>
+        <div className="prod__align">
           <img src={prod.img} className="card-img-top" alt={prod.nombre} />
           <div className="card-body">
             <h5 className="card-title">{prod.nombre}</h5>
