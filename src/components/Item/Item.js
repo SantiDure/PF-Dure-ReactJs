@@ -53,10 +53,8 @@ function Item() {
           <img src={item.img} alt={item.nombre}></img>
           <p>{item.descripcion}</p>
 
-          <div>${item.precio}</div>
-          <Link to={"/"}>
-            <button className=" btn btn-primary">Volver al inicio</button>
-          </Link>
+          <div>Precio: ${item.precio}</div>
+
           {goToCart ? (
             <Link to={"/cart"}>
               <button className=" btn btn-primary">Terminar Compra</button>
@@ -65,6 +63,12 @@ function Item() {
             <ItemCount cantidad={cant} onAdd={handleOnAdd} />
           )}
         </article>
+      </div>
+      <div className="btn__volver">
+        {" "}
+        <Link to={"/"}>
+          <button className=" btn btn-primary">Volver al inicio</button>
+        </Link>
       </div>
     </>
   );

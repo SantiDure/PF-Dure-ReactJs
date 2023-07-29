@@ -62,12 +62,6 @@ function NavBar() {
                 </li>
               </ul>
             </li>
-
-            <li className="nav-item">
-              <Link to="/about" className="nav-link">
-                Sobre Nosotros
-              </Link>
-            </li>
           </ul>
           <div className="cart">
             <CartWidget />

@@ -32,11 +32,11 @@ function ItemCount({ cantidad, onAdd }) {
         >
           +
         </button>
-      </div>
-      <div>
-        <button className=" btn btn-primary" onClick={() => onAdd(cant)}>
-          Agregar al carrito
-        </button>
+        <div>
+          <button className=" btn btn-primary" onClick={() => onAdd(cant)}>
+            Agregar al carrito
+          </button>
+        </div>
       </div>
     </>
   );
