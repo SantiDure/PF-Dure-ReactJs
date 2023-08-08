@@ -49,7 +49,7 @@ function Cart() {
     return (
       <>
         <div className="empty__cart">
-          <h2>No hay productos actualmente en su carrito en su carrito</h2>
+          <h2>No hay productos actualmente en su carrito</h2>
           <div>
             <img src={img} alt="No hay productos en el carrito"></img>
           </div>
